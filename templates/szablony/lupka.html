@@ -1,0 +1,28 @@
+
+    <div class="loupe_box">
+        <button type="button" onclick="show()" class="loupe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="loupe_icon" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </button>
+    </div>
+<script>
+    click_or_no = false;
+    var element = document.getElementsByClassName('search_wrapper');
+    var element2 = document.getElementsByClassName('search__container');
+    function show(){
+        if(click_or_no == false){
+            element[0].style.height = '100%';
+            element2[0].style.top = '40vh';
+            click_or_no = true;
+        }
+        else{
+            element[0].style.height = '0%';
+            element2[0].style.top = '-25vh';
+            click_or_no = false;
+        }
+  }
+</script>
+
+<!--https://stackoverflow.com/questions/45012378/cant-change-style-display-using-getelementbyclassname-->
+<!--https://www.impressivewebs.com/animate-display-block-none/-->

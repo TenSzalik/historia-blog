@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl-PL">
+<head>
+    {% include 'szablony/head.html' %}
+</head>
+<body>
+<div class="container-fluid">
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader"><h1 style="width: 700px;">BOGUSŁAW WOLNIEWICZ</h1></span></span>
+</div>
+
+        <div class="row">
+            {% include 'szablony/navbar.html' %}
+            <div class="col-sm-12 col-md-12 col-lg-12 coverPhoto"  style="background-image:url({{ any_tag.thumbnail.url }});">
+                <h1 class="entryTitle Headline">{{any_tag.name}}</h1>
+                <span style="color: white; display:table; position: relative;margin: 0 auto;top: 50%;transform: translateY(-50%); font-family: 'Poiret One', cursive;">{{any_tag.description | safe}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1 col-lg-1" id="lewy">
+                    
+            </div>
+            <div class="col-sm-10" id="srodkowy">
+                    {% block content %}
+                    {% endblock %}
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1" id="prawy">
+                    
+            </div>
+        </div>
+
+</div>
+</body>
+
+</html>
+<!--Mój js-->
+<script src="{% static "main.js" %}"></script>

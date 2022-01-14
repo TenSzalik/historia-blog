@@ -1,0 +1,81 @@
+{% extends "szablony/baza.html" %}
+
+{% block title %} Ogrod {% endblock %}
+
+{% block content %}
+<h2>Najnowsze</h2>
+<hr style="height: 2px; color: #009f94; opacity:unset">
+<br><br>
+<div class="row">
+    <div class="col-sm-1 items">
+    </div>
+    <div class="col-sm-7 items">
+        <div class="allEntrys">
+            {% for x in article %}
+                <div class="BoxEntry">
+                    <a href="/wpis/{{x.id}}">
+                        <div class="entry2" style="background-image:url({{ x.thumbnail.url }});">
+                        </div>
+                        <div class="title2">
+                            {{ x.title }}
+                            <br>
+                            <span style="font-size: 0.6em; color: burlywood;">{{x.created}}</span>
+                            <div class="subtitle" style="color: rgb(54, 54, 54); font-size: 15px; margin-top: 10px;">
+                                {{ x.subtitle }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-3 items">
+        <div class="popular-post">
+            
+        </div>
+    </div>
+    <div class="col-sm-1 items">
+    </div>
+</div>
+<hr style="height: 2px; color: #009f94; opacity:unset">
+<div class="row">
+    <div class="col-sm-12 items">
+        {% for x in history %}
+            <div class="entry" style="background-image:url({{ x.thumbnail.url }}); background-position: center; background-size: cover;">
+                <a href="/wpis/{{x.id}}">
+                    <div class="title">
+                        {{ x.title }}
+                        <div class="subtitle" style="color: rgb(54, 54, 54); font-size: 15px; margin-top: 10px;">
+                            {{ x.subtitle }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<hr style="height: 2px; color: #009f94; opacity:unset">
+
+<div class="row">
+
+</div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        speed: 600,
+        parallax: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
+    </script>
+<br>
+{% endblock %}

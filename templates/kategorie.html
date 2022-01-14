@@ -1,0 +1,53 @@
+{% extends 'szablony/baza_tag.html' %}
+
+{% block content %}
+    <div style="max-width: 100vh; background-color: floralwhite; margin-bottom: 200px; position: relative; top: -10vh; border-radius: 0.2em; box-shadow: 0 2px 10px rgb(0 0 0 / 85%);">
+    <br>
+    <form method="get">
+        <input class="search__input" type="text" placeholder="Search">
+            {{myFilter.form}}
+        <button type="submit" class="btn btn-primary">Wyszukaj</button>
+    </form>
+        <div class="row example-split">
+             <div class="col-xs-12 col-xs-offset-12 col-sm-12 col-sm-offset-12">
+                <ul class="timeline timeline-split">
+                {% for x in tags %}
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <span style="color: grey;">{{x.created}}</span>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <a href="/wpis/{{x.id}}">
+                                    <div class="category_box">
+                                        
+                                            <div class="content_category">
+                                                <h3 class="timeline-title">{{x.title}}</h3>
+                                                <hr style="background-color: tomato; width: 60%; margin: 0 auto;">
+                                                <span class="HeartAndComment" style="color: tomato;">
+                                                    <i class="fas fa-heart"></i>
+                                                    <span class="ALLheart" style="font-family: 'Poiret One', cursive;">{{ x.heart_count }}</span>
+                                                    <i class="fas fa-comments"></i>
+                                                    <span style="font-family: 'Poiret One', cursive;">{{ x.review_set.count }}</span>
+                                                    <i class="fas fa-eye"></i>
+                                                    <span style="font-family: 'Poiret One', cursive;">{{x.shows}}</span>
+                                                </span>
+                                                <span class="description">{{x.subtitle}}</span>
+                                            </div>
+                                            <div class="category_image_up">
+                                                <div class="category_image" style="background-image: url({{ x.thumbnail.url }})">
+                                                    
+                                                </div>
+                                            </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!--https://codepen.io/brady_wright/pen/NNOvrW TIMELINE-->

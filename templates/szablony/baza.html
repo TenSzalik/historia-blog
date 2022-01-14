@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl-PL">
+<head>
+  {% include 'szablony/head.html' %}
+  <link href='{% static "swiper.css" %}' rel="stylesheet" type="text/css" media="screen">
+</head>
+<!--IDEE
+https://codepen.io/stephaniewalter/pen/xxVgReM
+https://codepen.io/MEDALI1977/pen/VwaREaV
+https://codepen.io/z-/pen/WNbMjEW
+
+https://codepen.io/tterb/pen/KoNzXw
+https://codepen.io/szpakoli/pen/xbJjdR
+
+https://www.iflscience.com/
+https://codepen.io/cobra_winfrey/pen/mZePLQ Insekty
+https://codepen.io/MergimUjkani/pen/awONge zmieniające się tło przy slajdowaniu
+https://codepen.io/codewunder/pen/Bnspb/ 
+
+https://www.sabice.com/illustrazioni/-->
+<body>
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader"><h1 style="width: 700px;">HARRY POTTER</h1></span></span>
+</div>
+<div class="container-fluid">
+    <div class="row">
+            {% include 'szablony/navbar.html' %}
+                 <!-- Swiper -->
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper mySwiper col-sm-12 col-md-12 col-lg-12">
+                <div class="parallax-bg" style=" background-image: url(https://i.pinimg.com/originals/ac/a6/2a/aca62ac050ce6983687064a732c3c356.jpg);" data-swiper-parallax="-23%">
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    <div class="main_title" data-swiper-parallax="-300">Slide 1</div>
+                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-100">
+                        <p class="main_paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                        dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                        laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                        Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                        Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                        ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                        tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+                        </p>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                    <div class="main_title" data-swiper-parallax="-300">Slide 2</div>
+                    <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-100">
+                        <p class="main_paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                        dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                        laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+                        Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+                        Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                        ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                        tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+        </div>
+</div>
+<div id="content", name="content", class="main">
+        <div class="row justify-content-center">
+            <div class="col-sm-1 col-md-1 col-lg-1" id="lewy">
+                    <!--Główna jak post, wielki baner zielony na początku!-->
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10" id="srodkowy">
+            <br><br><br>
+                    {% block content %}
+                    {% endblock %}
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1" id="prawy">
+                    
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 foot">
+            
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<!--Mój js-->
+<script src="{% static "main.js" %}"></script>

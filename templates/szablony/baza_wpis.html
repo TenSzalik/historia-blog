@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl-PL">
+<head>
+    {% include 'szablony/head.html' %}
+</head>
+<body>
+<div class="container-fluid">
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader"><h1 style="width: 700px;">197 PIEROGÓW ZE SZPINAKIEM I KASZĄ GRYCZANĄ</h1></span></span>
+</div>
+<div class="search_wrapper">
+    <div class="search__container">
+        <p class="search__title">
+            Go ahead, hover over search
+        </p>
+        <input class="search__input" type="text" placeholder="Search">
+    </div>
+</div>
+{% include 'szablony/lupka.html' %}
+        <div class="row">
+            {% include 'szablony/navbar.html' %}
+            <div class="col-sm-12 col-md-12 col-lg-12 coverPhoto"  style="background-image: linear-gradient(to bottom, rgba(63, 191, 191, 0.52), rgba(4, 22, 219, 0.62)), url({{ articleObj.thumbnail.url }});">
+                {% for tag in tags %}
+                    <span class="tag">{{tag}}</span>
+                {% endfor %}
+                <h1 class="entryTitle Headline">{{articleObj.title}}</h1>
+                <span style="color: white; display:table; position: relative;margin: 0 auto;top: 50%;transform: translateY(-50%); font-family: 'Poiret One', cursive;">{{ articleObj.created }}</span>
+                <span class="HeartAndComment">
+                    <i class="fas fa-heart"></i>
+                    <span class="ALLheart" style="font-family: 'Poiret One', cursive;">{{ articleObj.heart_count }}</span>
+                    <i class="fas fa-comments"></i>
+                    <span style="font-family: 'Poiret One', cursive;">{{ number_reviews }}</span>
+                    <i class="fas fa-eye"></i>
+                    <span style="font-family: 'Poiret One', cursive;">{{obj.shows}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1 col-lg-1" id="lewy">
+                    
+            </div>
+            <div class="col-sm-10" id="srodkowy">
+                    {% block content %}
+                    {% endblock %}
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1" id="prawy">
+                    
+            </div>
+        </div>
+
+</div>
+</body>
+
+</html>
+<!--Mój js-->
+<script src="{% static "main.js" %}"></script>
