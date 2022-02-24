@@ -12,6 +12,3 @@ Do zrobienia:
 7) Strona "O mnie"
 8) Stopka
 9) Grafiki
-
-![alt text](https://imgur.com/3aRuVI3)
-![alt text](https://imgur.com/CDTGIXj)
