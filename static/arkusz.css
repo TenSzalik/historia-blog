@@ -587,7 +587,7 @@ https://codepen.io/ritz078/pen/LGRWjE/
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
 .search__container {
-        top: -25vh;
+        top: -50vh;
         position: relative;
         transition: 1s;
         width: 25%;
